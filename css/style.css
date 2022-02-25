@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color:#1b1b1b;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .container{
     width: 1200px;
     margin: 0 auto;
@@ -39,9 +44,9 @@
     display: none;
     background-color: rgba(0, 0, 0, 0.7);
     font-size: 12px;
-    padding: 5px;
+    padding: 10px;
     overflow-y: auto;
 }
-.card>p{
-    margin-top: 4px;
+.textArea>p{
+    margin-top: 5px;
 }

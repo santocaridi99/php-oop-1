@@ -1,13 +1,18 @@
 <?php
+// dichiaro una classe movie
 class Movie
 {
+    // attributi
     public $id;
     public $image;
     public $title;
     public $language;
     public $description;
     public $vote;
-
+    // dichiaro funzione costruttore
+    // che verrà eseguito una volta eseguita un istanza
+    // al costruttore do un array  associativo di film
+    // all array passo  tutti i dati
     function __construct(array $_movieData)
     {
         // controllo se tutte le chiavi sono state inserite correttamente
@@ -17,6 +22,7 @@ class Movie
                 var_dump("CHIAVE NON TROVATA $key");
             }
         }
+        // assegno valori aalle variabili
         $this->id = $_movieData["id"];
         $this->image = $_movieData["image"];
         $this->title = $_movieData["title"];
@@ -24,6 +30,7 @@ class Movie
         $this->description = $_movieData["description"];
         $this->vote = $_movieData["vote"];
     }
+    // funzione per creare una card  dove passo i vari valori
     public function createCard()
     {
         echo '<div class="card">';
@@ -45,7 +52,7 @@ class Movie
         echo '</div>';
     }
 };
-
+// creo un istanza o oggetto
 $movie1 = new Movie([
     "id" => 1,
     "image" => "https://cdn.pocket-lint.com/r/s/1200x630/assets/images/159643-tv-news-spider-man-no-way-home-image1-dryautoefj.jpg",
@@ -54,6 +61,7 @@ $movie1 = new Movie([
     "description" => "In seguito agli eventi di Spider-Man: Far from Home, la vita di Peter Parker viene stravolta dopo che Mysterio rivela al mondo la sua identità. Peter chiede aiuto a Stephen Strange affinché usi la magia per far scordare a tutti la sua identità. Ma l'incantesimo non va come previsto e Peter si ritrova a dover affrontare nemici da altri universi e a scoprire cosa significa davvero essere Spider-Man.",
     "vote" => "5 stelle"
 ]);
+// creo un altra istanza o oggetto
 $movie2 = new Movie([
     "id" => 2,
     "image" => "https://www.multisalacorso.com/wp-content/uploads/2022/02/uncharted.jpg",
@@ -68,6 +76,7 @@ $movie2 = new Movie([
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- uso html per linkare il css e stampare le card -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -78,6 +87,7 @@ $movie2 = new Movie([
 
 <body>
     <div class="container">
+        <!-- tramite php stampo le card nel container -->
         <?php
         echo  $movie1->createCard();
         echo  $movie2->createCard();
