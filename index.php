@@ -42,6 +42,7 @@ class Movie
         echo '<strong>Voto:</strong>' . '<span>' . $this->vote . '<span>';
         echo '</p>';
         echo '</div>';
+        echo '</div>';
     }
 };
 
